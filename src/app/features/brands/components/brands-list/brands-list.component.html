@@ -1,0 +1,33 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let item of brands; let i = index">
+      <a
+        class="nav-link"
+        [ngClass]="{ active: i + 1 === selectedIndex }"
+        (click)="selectTab(i + 1)"
+        >{{ item.name }}</a
+      >
+    </li>
+  </ul>
+
+  <div class="row">
+  @for (item of models; track $index) { @if (item.brandId === selectedIndex) {
+  <div class="card" style="width: 18rem">
+    <img src="{{ item.imageUrl }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+    </div>
+  </div>
+
+  } }
+</div>
+  <!--
+
+  <ul *ngFor="let item of models" class="list-group list-group-flush">
+    <li *ngIf="item.brandId === selectedIndex" class="list-group-item">
+      {{ item.name }}
+    </li>
+  </ul>
+
+--->
+</div>
