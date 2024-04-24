@@ -8,6 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { PostModelRequest } from '../../models/post-model-request';
+import { ControlErrorMessagePipe } from '../../../../core/pipes/control-error-message.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-model-form',
@@ -15,12 +17,13 @@ import { PostModelRequest } from '../../models/post-model-request';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    ControlErrorMessagePipe
   ],
   templateUrl: './create-model-form.component.html',
   styleUrl: './create-model-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateModelFormComponent { 
+export class CreateModelFormComponent {
 form: FormGroup = this.fb.group({
 
   brandId:[
@@ -30,7 +33,11 @@ form: FormGroup = this.fb.group({
 
   name: [
     '',
-    [Validators.required],
+    [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20),
+    ],
   ],
   modelYear: [
     '',
@@ -48,7 +55,8 @@ form: FormGroup = this.fb.group({
 
 constructor(
   private fb: FormBuilder,
-  private modelApiService: ModelsApiService
+  private modelApiService: ModelsApiService,
+  private router: Router
 ){}
 
 createModel(){
@@ -71,7 +79,7 @@ createModel(){
       this.form.reset();
     }
 
-    
+
   })
 }
 
@@ -79,11 +87,12 @@ onFormSubmit() {
   console.log(this.form);
 
   if (this.form.invalid) {
-    console.error('Form is invalid');
+    this.form.markAllAsTouched();
     return;
   }
 
   this.createModel();
+  this.router.navigate(['/home/models']);
 }
 
 

@@ -22,7 +22,11 @@ export class CreateBrandFormComponent {
     // Form Controls
     name: [
       '', // [0] : Başlangıç değeri
-      [Validators.required], // [1] : Validasyonlar
+      [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20),
+      ], // [1] : Validasyonlar
     ],
   });
 

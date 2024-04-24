@@ -1,11 +1,30 @@
 <form [formGroup]="form" (submit)="onFormSubmit()">
-    <!-- Name Input -->
+    <!-- BrandId Input -->
     BrandId: <input type="text" formControlName="brandId" />
+    <p *ngIf="form.get('brandId')?.invalid && form.get('brandId')?.touched">{{ form.get('brandId')?.errors | controlErrorMessage }}</p>
+    <br>
+
+    <!-- Name Input -->
     Name: <input type="text" formControlName="name" />
+    <p *ngIf="form.get('name')?.invalid && form.get('name')?.touched">{{ form.get('name')?.errors |  controlErrorMessage  }}</p>
+    <br>
+
+    <!-- ModelYear Input -->
     ModelYear: <input type="text" formControlName="modelYear" />
-    imageUrl: <input type="text" formControlName="imageUrl" />
+    <p *ngIf="form.get('modelYear')?.invalid && form.get('modelYear')?.touched">{{ form.get('modelYear')?.errors | controlErrorMessage }}</p>
+    <br>
+
+    <!-- ImageUrl Input -->
+    ImageUrl: <input type="text" formControlName="imageUrl" />
+    <p *ngIf="form.get('imageUrl')?.invalid && form.get('imageUrl')?.touched">{{ form.get('imageUrl')?.errors | controlErrorMessage }}</p>
+    <br>
+
+    <!-- DailyPrice Input -->
     DailyPrice: <input type="text" formControlName="dailyPrice" />
-    
+    <p *ngIf="form.get('dailyPrice')?.invalid && form.get('dailyPrice')?.touched">{{ form.get('dailyPrice')?.errors | controlErrorMessage }}</p>
+    <br>
+
+
     <button type="submit">Submit</button>
   </form>
-  
+
