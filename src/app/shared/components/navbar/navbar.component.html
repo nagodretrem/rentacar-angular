@@ -7,10 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Non-Active</a>
+          <a class="nav-link" [routerLink]="['/home/models']" routerLinkActive="active">Models</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home/customers']" routerLinkActive="active">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home/rentals']" routerLinkActive="active">Rentals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/brands/create']" routerLinkActive="active">Add Brand</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/brands/update']" routerLinkActive="active">Update Brand</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/models/create']" routerLinkActive="active">Add Model</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/models/update']" routerLinkActive="active">Update Model</a>
         </li>
       </ul>
     </div>

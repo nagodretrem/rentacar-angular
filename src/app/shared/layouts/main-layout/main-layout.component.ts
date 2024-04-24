@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     NavbarComponent,
     FooterComponent
   ],
@@ -15,6 +17,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './main-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainLayoutComponent {
-   title:string = 'Rent A Car';
- }
+export class MainLayoutComponent { 
+  title = 'Rent A Car';
+}

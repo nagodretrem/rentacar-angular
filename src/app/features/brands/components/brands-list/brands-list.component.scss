@@ -1,3 +1,11 @@
-:host {
+:host { // Direkt componentin kendisine uygulanır.
   display: block;
+}
+
+li, p{
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
 }

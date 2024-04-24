@@ -1,14 +1,9 @@
-<app-navbar title = {{title}}></app-navbar>
+<app-navbar title="{{title}}"></app-navbar>
 
-<div class="container-fluid">
+<ng-content></ng-content>
+<!-- <h1>Rent A Car</h1> -->
 
+<router-outlet></router-outlet>
+<!-- /home/models/ Home Page Component -->
 
-  <ng-content></ng-content>
-
-
-
-
-</div>
-
-
-<app-footer title = {{title}}></app-footer>
+<app-footer title="{{title}}"></app-footer>

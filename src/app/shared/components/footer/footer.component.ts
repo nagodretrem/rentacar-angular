@@ -11,7 +11,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent {
-  @Input() title: string = '';
-
+export class FooterComponent {  @Input() title: string = '';
 }

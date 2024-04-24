@@ -1,4 +1,4 @@
 export interface BrandListItemDto {
-  id:   number;
+  id: number;
   name: string;
 }
