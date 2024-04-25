@@ -8,11 +8,22 @@ import {
   Validators,
 } from '@angular/forms';
 import { PostBrandRequest } from '../../models/post-brand-request';
+import { ButtonDirective } from '../../../../core/directives/button.directive';
+import { NoCharacterInputDirective } from '../../../../core/directives/no-character-input.directive';
+import { MultipleDirective } from '../../../../core/directives/multiple.directive';
+import { WelcomeDirective } from '../../../../core/directives/welcome.directive';
 
 @Component({
   selector: 'app-create-brand-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonDirective,
+    NoCharacterInputDirective,
+    MultipleDirective,
+    WelcomeDirective
+  ],
   templateUrl: './create-brand-form.component.html',
   styleUrl: './create-brand-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,11 +33,7 @@ export class CreateBrandFormComponent {
     // Form Controls
     name: [
       '', // [0] : Başlangıç değeri
-      [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(20),
-      ], // [1] : Validasyonlar
+      [Validators.required, Validators.minLength(3), Validators.maxLength(10)], // [1] : Validasyonlar
     ],
   });
 

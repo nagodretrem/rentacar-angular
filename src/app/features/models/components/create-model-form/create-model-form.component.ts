@@ -10,6 +10,7 @@ import {
 import { PostModelRequest } from '../../models/post-model-request';
 import { ControlErrorMessagePipe } from '../../../../core/pipes/control-error-message.pipe';
 import { Router } from '@angular/router';
+import { ButtonDirective } from '../../../../core/directives/button.directive';
 
 @Component({
   selector: 'app-create-model-form',
@@ -17,7 +18,8 @@ import { Router } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ControlErrorMessagePipe
+    ControlErrorMessagePipe,
+    ButtonDirective
   ],
   templateUrl: './create-model-form.component.html',
   styleUrl: './create-model-form.component.scss',

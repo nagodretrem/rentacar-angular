@@ -7,14 +7,14 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class ControlErrorMessagePipe implements PipeTransform {
 
-  transform(value: ValidationErrors | undefined | null, ...args: any[]): unknown {
-    if(value?.["required"]){
+  transform(error: ValidationErrors | undefined | null, ...args: any[]): unknown {
+    if(error?.["required"]){
       return 'This field is required';
     }
-    if(value?.["minlength"]){
+    if(error?.["minlength"]){
       return 'This field must be at least 3 characters';
     }
-    if(value?.["maxlength"]){
+    if(error?.["maxlength"]){
       return 'This field must be at most 20 characters';
     }
     return 'This field is invalid';
